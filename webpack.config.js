@@ -1,20 +1,24 @@
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
+    // 시작점
     entry : {
         main : ['./src/dist/js/app.js', './src/dist/scss/app.scss']
     },
+    // 최종 결과(파일)
     output : {
-        path: path.resolve(__dirname, './src/assets'),
-        filename: '[name].js',
+        path: path.resolve(__dirname, './src/assets'), // 현재경로 하위에 assets로 떨어져라
+        filename: '[name].js', // main.js
     },
     module: {
         rules: [
             {
                 test : /\.(css|scss|sass)$/,
-                use : ['style-loader','css-loader']
+                // use : ['style-loader','css-loader']
+                use : [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
                 test : /\.(png|jpg|gif|jpeg|eot|ttf|woff|woff2|svg)$/,
@@ -32,5 +36,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(), // 이전 빌드 파일들 모두 삭제 시켜줌(최신만 남기고 알아서 정리해줌)
-    ]
+        new MiniCssExtractPlugin(
+            {
+                filename : 'main.css'
+            }
+        )
+    ],
 }
