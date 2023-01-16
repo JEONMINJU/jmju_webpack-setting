@@ -1,0 +1,14 @@
+
+body {
+    background: rgb(221, 202, 85);
+}
+
+img {
+    width: 500px;
+}
+
+.test {
+    &__title {
+        color: red;
+    }
+}
