@@ -6,7 +6,7 @@ module.exports = {
     mode: 'development',
     // 시작점
     entry : {
-        main : ['./src/dist/js/app.js', './src/dist/scss/app.scss']
+        'js/main' : ['./src/dist/js/app.js', './src/dist/scss/app.scss']
     },
     // 최종 결과(파일)
     output : {
@@ -38,7 +38,7 @@ module.exports = {
         new CleanWebpackPlugin(), // 이전 빌드 파일들 모두 삭제 시켜줌(최신만 남기고 알아서 정리해줌)
         new MiniCssExtractPlugin(
             {
-                filename : 'main.css'
+                filename : 'css/main.css'
             }
         )
     ],
