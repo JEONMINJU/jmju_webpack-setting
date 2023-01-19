@@ -6,12 +6,12 @@ module.exports = {
     mode: 'development',
     // 시작점
     entry : {
-        'js/main' : ['./src/dist/js/app.js', './src/dist/scss/app.scss']
+        'assets/js/main' : ['./src/dist/js/app.js', './src/dist/scss/app.scss']
     },
     // 최종 결과(파일)
     output : {
-        path: path.resolve(__dirname, './src/assets'), // 현재경로 하위에 assets로 떨어져라
-        filename: '[name].js', // main.js
+        path: path.resolve(__dirname, './src'), // 현재경로 하위에 assets로 떨어져라
+        filename: '[name].js', // main.js (entry에서 넣어준 key값이 네임으로)
     },
     module: {
         rules: [
@@ -22,23 +22,21 @@ module.exports = {
             },
             {
                 test : /\.(png|jpg|gif|jpeg|eot|ttf|woff|woff2|svg)$/,
-                use : [
-                    {
-                        loader : 'file-loader',
-                        options : {
-                            publicPath: '../assets', // 컴파일 후 assets에 떨어진 이미지 호출하도록 상대경로 설정
-                            name : '[name].[ext]?[hash]' // 결과물이 원본 파일 이름과 동일하게 떨어지도록
-                        }
-                    }
-                ]
+                loader : 'file-loader',
+                options : {
+                    name : '[name].[ext]', // 결과물이 원본 파일 이름과 동일하게 떨어지도록
+                    publicPath: '../../images', // assets > main.css에 떨어진 이미지 호출하도록 상대경로 설정
+                    outputPath: '/images',
+                    esModule: false, //빌드후에 [object Module] 라고 보일것이다. 이것은 url을 commonJS 스펙으로 처리하기 때문이다. 그러므로 esModule 방식을 꺼야한다.
+                }
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(), // 이전 빌드 파일들 모두 삭제 시켜줌(최신만 남기고 알아서 정리해줌)
+        // new CleanWebpackPlugin(), // 이전 빌드 파일들 모두 삭제 시켜줌(최신만 남기고 알아서 정리해줌)
         new MiniCssExtractPlugin(
             {
-                filename : 'css/main.css'
+                filename : 'assets/css/main.css'
             }
         )
     ],

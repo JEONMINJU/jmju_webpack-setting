@@ -1,13 +1,10 @@
 import {test} from '../js/test';
-// import '../scss/app.scss';
-import webpackImage from '../images/webpack-test.jpeg';
 
 window.addEventListener('DOMContentLoaded', () => {
     const el = document.querySelector("#app");
+    const minju = "민 주"
 
     el.innerHTML = `
-        <h1>${test(3,3)}TEST!!!</h1>
-        
-        <img src="${webpackImage}" alt="webpack" />
+        <h1>${test(minju, 123)} webpack 설정!!!</h1>
     `
-})
+});

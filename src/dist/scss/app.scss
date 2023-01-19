@@ -1,1 +1,8 @@
 @import "./divide/test.scss";
+
+.test {
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background: url(../images/webpack-test.jpeg);
+}
