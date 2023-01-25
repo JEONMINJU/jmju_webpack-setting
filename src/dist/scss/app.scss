@@ -4,4 +4,10 @@
     width: 1000px;
     height: 1000px;
     background: url(../images/webpack-test.jpeg);
+
+    &__text {
+        font-size: 30px;
+        color: red;
+        border: 1px solid blue;
+    }
 }

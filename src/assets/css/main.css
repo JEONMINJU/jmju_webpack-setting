@@ -1,15 +1,20 @@
-
 body {
-    background: rgb(221, 202, 85);
+  background: #ddca55;
 }
 
 img {
-    width: 500px;
+  width: 500px;
 }
 
 .test {
-    display: block;
-    width: 1000px;
-    height: 1000px;
-    background: url(../../images/webpack-test.jpeg);
+  width: 1000px;
+  height: 1000px;
+  background: url(../../images/webpack-test.jpeg);
 }
+
+.test__text {
+  font-size: 30px;
+  color: red;
+  border: 1px solid blue;
+}
+

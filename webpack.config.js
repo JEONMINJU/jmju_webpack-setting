@@ -18,7 +18,20 @@ module.exports = {
             {
                 test : /\.(css|scss|sass)$/,
                 // use : ['style-loader','css-loader']
-                use : [MiniCssExtractPlugin.loader, 'css-loader']
+                use : [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'sass-loader', // sass 파일을 css로 컴파일
+                        options: {
+                            outputStyle: 'expanded', // 컴파일 된 css 파일 확장하여 보이기
+                            // outputStyle: 'compressed', // 컴파일 된 css 파일 압축
+                            sourceMap: true, // 배포용으로 빌드한 파일과 원본파일을 연결 시켜줌(개발자도구에서 파일의 출처를 알 수 있다.)
+                        },
+                    }
+                ]
             },
             {
                 test : /\.(png|jpg|gif|jpeg|eot|ttf|woff|woff2|svg)$/,
@@ -29,7 +42,7 @@ module.exports = {
                     outputPath: '/images',
                     esModule: false, //빌드후에 [object Module] 라고 보일것이다. 이것은 url을 commonJS 스펙으로 처리하기 때문이다. 그러므로 esModule 방식을 꺼야한다.
                 }
-            }
+            },
         ]
     },
     plugins: [
