@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/JEONMINJU/wepack-setting#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^2.1.0",
     "file-loader": "^6.2.0",

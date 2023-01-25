@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/test */ \"./src/dist/js/test.js\");\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    const el = document.querySelector(\"#app\");\r\n    const minju = \"민 주\"\r\n\r\n    el.innerHTML = `\r\n        <h1>${Object(_js_test__WEBPACK_IMPORTED_MODULE_0__[\"test\"])(minju, 123)} webpack 설정!!!</h1>\r\n    `\r\n});\n\n//# sourceURL=webpack:///./src/dist/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/test */ \"./src/dist/js/test.js\");\n\n\nwindow.addEventListener('DOMContentLoaded', function () {\n    var el = document.querySelector(\"#app\");\n    var minju = \"민 주\";\n\n    el.innerHTML = '\\n        <h1>' + Object(_js_test__WEBPACK_IMPORTED_MODULE_0__[\"test\"])(minju, 123) + ' webpack \\uC124\\uC815!!!</h1>\\n    ';\n});\n\n//# sourceURL=webpack:///./src/dist/js/app.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"test\", function() { return test; });\nfunction test(a, b) {\r\n    return a + b;\r\n}\n\n//# sourceURL=webpack:///./src/dist/js/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"test\", function() { return test; });\nfunction test(a, b) {\n    var test = function test() {\n        console.log(\"test\");\n    };\n\n    test();\n\n    return a + b;\n}\n\n//# sourceURL=webpack:///./src/dist/js/test.js?");
 
 /***/ }),
 

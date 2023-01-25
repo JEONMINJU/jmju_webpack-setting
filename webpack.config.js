@@ -16,6 +16,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test:/\.js$/,
+                exclude: /node_modules/, // babel-loader에서는 제외되지 않기 때문에 추가(webpack5이상은 다를수도..)
+                use : {
+                    loader: 'babel-loader',
+                }
+            },
+            {
                 test : /\.(css|scss|sass)$/,
                 // use : ['style-loader','css-loader']
                 use : [
